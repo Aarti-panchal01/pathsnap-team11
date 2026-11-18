@@ -1,0 +1,5 @@
+Model Name,Algorithm Family,CV Macro F1 (Mean),CV Macro F1 (Std),CV Top-1 Acc (Mean),CV Top-1 Acc (Std),CV Log Loss (Mean),CV Log Loss (Std),Student-Test Macro F1,Student-Test Top-1 Acc,Student-Test Log Loss,Student-Test Accuracy,Student-Test Precision,Student-Test Recall,Training Time (s),Inference Latency (ms/1k)
+Model 1 (Logistic Regression),Linear & Probabilistic,0.6588,0.0149,0.6856,0.1569,0.1682,0.0115,0.6651,0.7963,0.1657,0.9182,0.2304,0.9906,10.211,0.325
+Model 1-GPU (Logistic Regression on RTX 4060),Linear & Probabilistic (GPU),0.6536,0.0164,0.6752,0.1512,0.1664,0.009,0.6666,0.798,0.1597,0.919,0.2323,0.9924,8.019,0.378
+Model 2 (K-Nearest Neighbors),Instance-based,0.6392,0.0913,0.0349,0.006,0.1365,0.0823,0.6985,0.0462,0.0987,0.9811,0.8223,0.27,0.092,22.225
+Model 3 (Random Forest),Tree-based Ensemble,0.8127,0.0381,0.7052,0.1546,0.0651,0.0112,0.829,0.7949,0.0634,0.9766,0.5139,0.963,70.32,0.98

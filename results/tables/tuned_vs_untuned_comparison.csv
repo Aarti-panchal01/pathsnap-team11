@@ -1,0 +1,3 @@
+Configuration,CV Macro F1 (Mean),CV Top-1 Acc (Mean),Student-Test Macro F1,Student-Test Top-1 Acc,Student-Test Log Loss,Inference Latency (ms/1k),Optimization Trials,Tuning Cost (s)
+Untuned Baseline (Default LightGBM),0.7963,0.6652,0.8142,0.7411,0.0696,0.667,0,0.0
+Tuned Model (Optuna Bayesian TPE),0.824,0.6626,0.8494,0.7429,0.05,2.277,15,301.65

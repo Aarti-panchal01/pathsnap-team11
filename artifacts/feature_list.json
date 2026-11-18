@@ -1,0 +1,20 @@
+[
+  "dist_m",
+  "candidate_rank",
+  "arc_length_m",
+  "projection_fraction",
+  "signed_cross_track_m",
+  "point_to_start_m",
+  "point_to_end_m",
+  "arc_bearing_rad",
+  "gps_heading_rad",
+  "heading_difference_rad",
+  "heading_alignment",
+  "time_step_s",
+  "gps_speed_mps",
+  "is_gap_point",
+  "from_node_in_degree",
+  "from_node_out_degree",
+  "to_node_in_degree",
+  "to_node_out_degree"
+]
