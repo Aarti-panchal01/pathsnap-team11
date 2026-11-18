@@ -35,10 +35,10 @@ export default function MapComponent({
         attributionControl: false,
       });
 
-      // Sleek Dark Matter Tiles from CartoDB
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        maxZoom: 19,
-        subdomains: 'abcd',
+      // High-performance clean dark tiles (No API key watermark required)
+      L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 16,
+        attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
       }).addTo(map);
 
       // Add Zoom Control to bottom-right

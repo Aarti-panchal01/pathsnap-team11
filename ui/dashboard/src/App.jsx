@@ -28,7 +28,13 @@ const DEFAULT_TRIPS = [
 ];
 
 export default function App() {
-  const [apiUrl, setApiUrl] = useState('http://localhost:8000');
+  const [apiUrl, setApiUrl] = useState(() => {
+    if (typeof window !== 'undefined' && window.location) {
+      const host = window.location.hostname || 'localhost';
+      return `http://${host}:8000`;
+    }
+    return 'http://localhost:8000';
+  });
   const [trips, setTrips] = useState(DEFAULT_TRIPS);
   const [selectedTrip, setSelectedTrip] = useState(DEFAULT_TRIPS[0]);
   const [loading, setLoading] = useState(false);
@@ -96,12 +102,12 @@ export default function App() {
         method: 'POST',
       });
       if (!res.ok) {
-        throw new Error(`API Error ${res.status}: ${await res.text()}`);
+        throw new Error(`API returned HTTP ${res.status}: ${await res.text()}`);
       }
       const data = await res.json();
       setEvaluationData(data);
     } catch (err) {
-      setError(err.message);
+      setError(`Cannot reach API at ${apiUrl}. Ensure Laptop 1 has uvicorn running on port 8000.`);
     } finally {
       setLoading(false);
     }
