@@ -1,0 +1,11 @@
+partition,trip_id,files_present,file_count,gps_rows,track_bytes,nodes_bytes,arcs_bytes,route_bytes
+student_test,00000000,track;nodes;arcs;route,4,2503,81492,170840,176989,881
+student_test,00000007,track;nodes;arcs;route,4,1354,43575,41220,38998,486
+student_test,00000009,track;nodes;arcs;route,4,1049,33513,134900,126694,2217
+student_test,00000040,track;nodes;arcs;route,4,2995,97728,258900,277927,1506
+student_test,00000052,track;nodes;arcs;route,4,262,8278,35400,30902,474
+student_test,00000056,track;nodes;arcs;route,4,3958,133479,309939,288046,7628
+student_test,00000065,track;nodes;arcs;route,4,768,24512,128960,128022,701
+student_test,00000076,track;nodes;arcs;route,4,1486,48392,532700,624245,2098
+student_test,00000077,track;nodes;arcs;route,4,3911,127956,88480,91058,1258
+student_test,00000091,track;nodes;arcs;route,4,874,26986,120840,119276,1095

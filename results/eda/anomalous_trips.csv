@@ -1,0 +1,52 @@
+partition,trip_id,anomaly_reason
+train,00000001,GPS gap over 5 seconds
+train,00000002,GPS gap over 5 seconds; broken reference route
+train,00000004,GPS gap over 5 seconds
+train,00000006,GPS gap over 5 seconds
+train,00000011,GPS gap over 5 seconds
+train,00000013,GPS gap over 5 seconds
+train,00000014,GPS gap over 5 seconds
+train,00000019,broken reference route
+train,00000021,GPS gap over 5 seconds
+train,00000022,GPS gap over 5 seconds
+train,00000024,GPS gap over 5 seconds
+train,00000026,GPS gap over 5 seconds
+train,00000028,GPS gap over 5 seconds
+train,00000032,GPS gap over 5 seconds
+train,00000033,broken reference route
+train,00000034,GPS gap over 5 seconds
+train,00000037,GPS gap over 5 seconds
+train,00000038,GPS gap over 5 seconds
+train,00000039,GPS gap over 5 seconds
+train,00000041,GPS gap over 5 seconds; broken reference route
+train,00000042,GPS gap over 5 seconds; broken reference route
+train,00000043,GPS gap over 5 seconds
+train,00000044,GPS gap over 5 seconds
+train,00000046,GPS gap over 5 seconds
+train,00000053,GPS gap over 5 seconds
+train,00000054,GPS gap over 5 seconds
+train,00000055,GPS gap over 5 seconds
+train,00000057,GPS gap over 5 seconds
+train,00000058,GPS gap over 5 seconds
+train,00000060,GPS gap over 5 seconds
+train,00000062,GPS gap over 5 seconds
+train,00000068,GPS gap over 5 seconds
+train,00000069,GPS gap over 5 seconds; broken reference route
+train,00000070,GPS gap over 5 seconds
+train,00000071,GPS gap over 5 seconds
+train,00000074,GPS gap over 5 seconds
+train,00000075,broken reference route
+train,00000078,GPS gap over 5 seconds
+train,00000080,GPS gap over 5 seconds; broken reference route
+train,00000081,GPS gap over 5 seconds
+train,00000084,GPS gap over 5 seconds
+train,00000085,GPS gap over 5 seconds
+train,00000086,broken reference route
+train,00000088,GPS gap over 5 seconds
+train,00000089,GPS gap over 5 seconds; broken reference route
+train,00000090,GPS gap over 5 seconds
+train,00000093,GPS gap over 5 seconds
+train,00000098,GPS gap over 5 seconds
+train,00000099,GPS gap over 5 seconds
+student_test,00000065,GPS gap over 5 seconds
+student_test,00000076,GPS gap over 5 seconds; broken reference route
