@@ -8,8 +8,10 @@ Run on Laptop 1:
 import time
 import logging
 from typing import List
+from pathlib import Path
 from fastapi import FastAPI, HTTPException, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 try:
@@ -117,6 +119,12 @@ def predict_trip(trip_id: str):
     except Exception as e:
         logger.exception(f"Inference error on trip [{trip_id}]: {e}")
         raise HTTPException(status_code=500, detail=f"Pipeline error: {str(e)}")
+
+
+# Mount production React UI build if present (enables 1-click loading from browser)
+DASHBOARD_DIST = Path(__file__).resolve().parent.parent / "ui" / "dashboard" / "dist"
+if DASHBOARD_DIST.exists():
+    app.mount("/", StaticFiles(directory=str(DASHBOARD_DIST), html=True), name="dashboard")
 
 
 if __name__ == "__main__":

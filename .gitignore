@@ -5,3 +5,11 @@ __pycache__/
 .env
 data/
 *.zip
+
+# Node.js
+node_modules/
+.npm/
+
+# Build artifacts
+dist/
+build/
