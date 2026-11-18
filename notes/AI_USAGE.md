@@ -1,0 +1,9 @@
+## Role A: dataset preparation
+
+- Implemented the PathSnap data paths, trip loader/validator, and per-trip metric projection helpers using the user-provided data layout.
+- Added per-trip projected arc geometries, directed graph/adjacency helpers, route-order labeling, and radius/cap-based candidate generation. Candidate settings were fit on train only; candidate evaluation was reported separately for train and student-test.
+- Ran inventory, data-quality, network/reference-route, and preprocessing analyses on the actual `train` (80 trips) and `student_test` (10 trips) partitions. Partition labels are retained in generated tables; only `train` was used to calibrate the 99th-percentile far-from-road threshold.
+- Route labels use a monotone dynamic-programming assignment over the supplied route sequence; exact nearest-arc ties and points beyond the train-derived distance threshold are flagged for review.
+- Generated per-trip and partition CSV summaries, PNG EDA plots, and four Folium HTML maps under `results/`. GPS-to-route distance and preprocessed per-trip CSV outputs are stored under the environment-selected dataset `processed/` directory, not in the repository.
+- Added non-destructive preprocessing flags for coordinates, timestamps, time gaps, and nearest-network distance. No GPS observations were dropped or altered. Supplied routes are treated as reference data and broken routes are reported rather than removed.
+- Generated full candidate-feature tables as compressed per-trip files under `PATHSNAP_DATA_DIR\processed\candidate_features\`; only summary tables and a deterministic sample are in the repository. No models or predicted routes have been generated.

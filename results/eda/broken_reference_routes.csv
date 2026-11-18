@@ -1,0 +1,12 @@
+partition,trip_id,route_arc_ids_out_of_range,route_discontinuities
+train,00000002,0,1
+train,00000019,0,3
+train,00000033,0,1
+train,00000041,0,1
+train,00000042,0,1
+train,00000069,0,1
+train,00000075,0,2
+train,00000080,0,1
+train,00000086,0,1
+train,00000089,0,1
+student_test,00000076,0,1
