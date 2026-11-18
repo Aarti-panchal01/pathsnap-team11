@@ -122,3 +122,50 @@ def decode(candidates, arc_endpoints, timestamps, config=None):
         previous_obs = observation
     _backtrack(layers, scores, output)
     return output
+
+
+
+# ---------------------------------------------------------
+# Backwards-compatibility wrapper for test suites / callers
+# ---------------------------------------------------------
+@dataclass
+class HMMConfig:
+    beta_m: float = 6.0
+    disconnection_log_penalty: float = -20.0
+    max_gap_seconds: float = 5.0
+
+    def to_dict(self):
+        return {
+            "beta_m": self.beta_m,
+            "disconnection_log_penalty": self.disconnection_log_penalty,
+            "max_gap_seconds": self.max_gap_seconds
+        }
+
+
+class ViterbiDecoder:
+    def __init__(self, config=None):
+        self.config = config or ViterbiConfig()
+
+    def decode_trip(self, trip, features_df, model):
+        """Wrapper bridging Trip object + features DataFrame + Model into decode()."""
+        # Feature columns excluding metadata
+        meta_cols = {"trip_id", "obs_idx", "cand_arc_id", "label", "partition"}
+        feature_cols = [c for c in features_df.columns if c not in meta_cols]
+        X = features_df[feature_cols].to_numpy()
+
+        # Score candidates using model
+        if hasattr(model, "predict_proba"):
+            probs = model.predict_proba(X)[:, 1]
+        elif hasattr(model, "predict"):
+            probs = model.predict(X)
+        else:
+            probs = np.full(len(X), 0.5)
+
+        cand_df = features_df[["obs_idx", "cand_arc_id"]].copy()
+        cand_df["score"] = probs
+
+        arc_endpoints = trip.arcs[["from_node", "to_node"]].to_numpy()
+        timestamps = trip.track["t"].to_numpy()
+
+        cfg = self.config if isinstance(self.config, ViterbiConfig) else ViterbiConfig()
+        return decode(cand_df, arc_endpoints, timestamps, cfg)
