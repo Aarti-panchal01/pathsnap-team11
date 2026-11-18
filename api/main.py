@@ -12,7 +12,10 @@ from fastapi import FastAPI, HTTPException, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from pipeline import pipeline_instance
+try:
+    from api.pipeline import pipeline_instance
+except ImportError:
+    from pipeline import pipeline_instance
 
 # Setup live console logging for Laptop 1 demonstration
 logging.basicConfig(
