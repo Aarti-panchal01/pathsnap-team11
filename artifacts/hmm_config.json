@@ -1,0 +1,9 @@
+{
+  "max_candidates": 16,
+  "max_gap_seconds": 5.0,
+  "emission_floor": 1e-8,
+  "same_arc_weight": 1.0,
+  "adjacent_arc_weight": 0.85,
+  "one_bridge_weight": 0.35,
+  "unlinked_weight": 0.02
+}
